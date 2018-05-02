@@ -1,0 +1,37 @@
+<style>
+  .header img {
+    width: calc(100% + 48px);
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: -24px -24px 0px;
+    -webkit-box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.24);
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+</style>
+
+<div class="header">
+  <img [src]="item.imageUrl" [alt]="item.description">
+  <div class="title">
+    <h3>{{item.name}} #{{item.partNumber}}</h3>
+  </div>
+</div>
+
+<div class="details">
+  <p>{{item.description}} <br>
+    <strong *ngIf="item.manufacturer">Manufacturer: {{item.manufacturer}}</strong>
+  </p>
+  <p class="available"><strong>Available: {{item.availableStock}}</strong></p>
+  <p *ngIf="item.limited"><strong>Limits: {{item.limits}}</strong></p>
+</div>
+<div class="footer">
+  <button [disabled]="item.availableStock<=0" mat-raised-button color="primary"
+          (click)="getItem(item)">
+    {{item.consumable? 'Get': 'Borrow'}}
+  </button>
+</div>

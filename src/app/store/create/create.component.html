@@ -1,0 +1,56 @@
+<style>
+  .full-width {
+    width: 100%;
+  }
+
+  .content {
+    max-width: 768px;
+  }
+</style>
+
+<mat-card class="content">
+  <mat-toolbar>
+    Add Item
+  </mat-toolbar>
+
+  <div>
+    <mat-form-field class="full-width">
+      <input required type="text" matInput placeholder="Item Name" [(ngModel)]="newItem.name">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input type="text" matInput placeholder="Description" [(ngModel)]="newItem.description">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input type="text" matInput placeholder="Manufacturer" [(ngModel)]="newItem.manufacturer">
+    </mat-form-field>
+
+    <mat-checkbox class="full-width" required [(ngModel)]="newItem.consumable">Is Consumable</mat-checkbox>
+
+    <mat-form-field class="full-width">
+      <input required type="text" matInput placeholder="Stock" [(ngModel)]="newItem.totalStock">
+    </mat-form-field>
+
+    <mat-checkbox required [(ngModel)]="newItem.limited">Is Limited</mat-checkbox>
+
+    <mat-form-field class="" *ngIf="newItem.limited">
+      <input required type="number" matInput placeholder="User Limits" [(ngModel)]="newItem.limits">
+    </mat-form-field>
+
+    <mat-checkbox class="full-width" required [(ngModel)]="newItem.restricted">Is Restricted</mat-checkbox>
+
+    <mat-form-field class="full-width">
+      <mat-select required placeholder="Storage location" [(ngModel)]="newItem.storage">
+        <mat-option *ngFor="let storage of stores" [value]="storage">
+          {{storage.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </div>
+  <div class="footer">
+    <button mat-raised-button color="primary" (click)="addItem()">Add</button>
+  </div>
+</mat-card>

@@ -1,0 +1,42 @@
+
+
+<router-outlet>
+  <div class="users">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let user of users">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{user.firstname+' '+user.lastname}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{user.username}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <input matInput placeholder="First name" [(ngModel)]="user.firstname">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Last name" [(ngModel)]="user.lastname">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Email" [(ngModel)]="user.email">
+        </mat-form-field>
+
+        <mat-checkbox [(ngModel)]="user.enabled">Enabled</mat-checkbox>
+
+        <div class="footer">
+          <button mat-button color="primary" (click)="updateUser(user)">Update</button>
+        </div>
+        <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Last name" [(ngModel)]="user.firstname">-->
+        <!--</mat-form-field>-->
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <a mat-mini-fab routerLink="create">Link</a>
+  </div>
+</router-outlet>
