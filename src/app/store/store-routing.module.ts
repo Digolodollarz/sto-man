@@ -6,6 +6,7 @@ import {ItemsComponent} from './items/items.component';
 import {CreateComponent} from './create/create.component';
 import {ManageComponent} from './manage/manage.component';
 import {SmTitleService} from '../sm-title.service';
+import {SupervisorGuard} from '../_guards/supervisor.guard';
 
 const routes: Routes = [
   {
@@ -19,15 +20,18 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [SupervisorGuard]
       },
       {
         path: 'add',
-        component: CreateComponent
+        component: CreateComponent,
+        canActivate: [SupervisorGuard]
       },
       {
         path: 'manage',
-        component: ManageComponent
+        component: ManageComponent,
+        canActivate: [SupervisorGuard]
       }
     ]
   }

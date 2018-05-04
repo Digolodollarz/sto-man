@@ -3,12 +3,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from '../_guards/auth.guard';
 import {UsersComponent} from './users.component';
 import {CreateUserComponent} from './create-user/create-user.component';
+import {AdminGuard} from '../_guards/admin.guard';
 
 const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AdminGuard],
     children: [
       {
         path: 'create',

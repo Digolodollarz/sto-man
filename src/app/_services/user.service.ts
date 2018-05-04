@@ -33,6 +33,11 @@ export class UserService {
     );
   }
 
+  /**
+   * Dizer are useful for some
+   * Dashboad things
+   */
+
 
   /**
    * Handle Http operation that failed.
