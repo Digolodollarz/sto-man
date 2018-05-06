@@ -6,26 +6,66 @@
   .flex {
     flex: 1 1 auto;
   }
+
+  mat-drawer {
+    width: 256px;
+    color: white;
+    background: rgba(255, 0, 0, 0.61) url("/assets/img/sidenav_back.jpg") center;
+  }
+
+  .sidenav-content {
+    background-color: rgba(255, 0, 0, 0.61);
+  }
+
+  .sidenav-content .header {
+    font-size: x-large;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-bottom: 1px solid #eee;
+    padding: 24px 6px;
+    text-align: center;
+  }
+
+  .sidenav-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 4px;
+    margin: 2px 4px;
+  }
+
+  .sidenav-link:hover {
+    color: #000;
+    background-color: #ddd;
+  }
 </style>
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <mat-toolbar color="primary" class="mat-elevation-z4">
-      Navigation
-    </mat-toolbar>
-    <a routerLink="dashboard">Dashboard</a>
-    <a routerLink="admin">Admin</a>
-    <a routerLink="store">Store</a>
-    <a routerLink="store/add">Add Item</a>
-    <a routerLink="store/manage">Manage Items</a>
-    <a routerLink="users">Users</a>
-    <a routerLink="users/create">Add User</a>
-    <a routerLink="dashboard">Dashboard</a>
-    <a routerLink="dashboard">Dashboard</a>
-    <a routerLink="dashboard">Dashboard</a>
+<mat-drawer-container>
+  <mat-drawer #sidenav mode="side" [opened]="true" class="mat-elevation-z4">
+    <!--<mat-toolbar color="primary">-->
+    <!--Navigation-->
+    <!--</mat-toolbar>-->
+    <div class="sidenav-content">
+      <div class="header">
+        <mat-icon>store</mat-icon> Stores
+      </div>
+
+
+      <a class="sidenav-link" routerLink="dashboard">Dashboard</a>
+      <a class="sidenav-link" routerLink="admin">Admin</a>
+      <a class="sidenav-link" routerLink="store">Store</a>
+      <a class="sidenav-link" routerLink="store/add">Add Item</a>
+      <a class="sidenav-link" routerLink="store/manage">Manage Items</a>
+      <a class="sidenav-link" routerLink="users">Users</a>
+      <a class="sidenav-link" routerLink="users/create">Add User</a>
+      <a class="sidenav-link" routerLink="dashboard">Dashboard</a>
+      <a class="sidenav-link" routerLink="dashboard">Dashboard</a>
+      <a class="sidenav-link" routerLink="dashboard">Dashboard</a>
+    </div>
     <button mat-button (click)="sidenav.close()">Close</button>
-  </mat-sidenav>
-  <mat-sidenav-content>
+  </mat-drawer>
+  <mat-drawer-content>
     <mat-toolbar color="primary" class="mat-elevation-z4">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
@@ -48,8 +88,8 @@
       <router-outlet></router-outlet>
     </main>
 
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>
 
 
 

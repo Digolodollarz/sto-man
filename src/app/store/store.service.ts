@@ -6,12 +6,15 @@ import {of} from 'rxjs/observable/of';
 import {GlobalVariables} from '../globals';
 import {Storage} from '../_models/storage';
 import {Item} from '../_models/item';
+import {UserService} from '../_services/user.service';
+import {AuthService} from '../auth.service';
 
 @Injectable()
 export class StoreService {
   private apiUrl = `${GlobalVariables.BASE_API_URL}/api`;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private userService: AuthService) {
   }
 
 
@@ -101,6 +104,7 @@ export class StoreService {
       tap(_ => console.log(`fetched component id=${id}`))
     );
   }
+
   // getPendingRequests(offset?: number): Observable<ComponentRequest[]> {
   //   return this.http.get<ComponentRequest[]>(`${this.apiUrl}/request/pending`);
   // }
@@ -125,6 +129,11 @@ export class StoreService {
   //   const url = `${this.apiUrl}/request/mine/${userId}/${componentId}`;
   //   return this.http.get<ComponentRequest[]>(url);
   // }
+
+  getAllUserRequests(): Observable<any[]> {
+    const url = `${this.apiUrl}/request/mine`;
+    return this.http.get<any[]>(url);
+  }
 
   getStudentComponents(): Observable<any[]> {
     const url = `${this.apiUrl}/student/components`;

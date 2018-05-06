@@ -1,0 +1,22 @@
+:host {
+  @mixin md-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    line-height: $size;
+  }
+
+  .dash-icon {
+    &mat-icon {
+      @include md-icon-size(48px);
+    }
+  }
+}
+
+.dash-item mat-card {
+  padding-bottom: 0;
+
+  .footer {
+    border-top: 1px solid rgba(128, 128, 128, 0.51);
+  }
+}

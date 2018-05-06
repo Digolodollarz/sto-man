@@ -3,13 +3,13 @@ import {CommonModule} from '@angular/common';
 import {StandardUserRoutingModule} from './/standard-user-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {StandardUserComponent} from './standard-user/standard-user.component';
-import {MatButtonModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     StandardUserRoutingModule,
-    MatCardModule, MatButtonModule
+    MatCardModule, MatButtonModule, MatIconModule
   ],
   declarations: [DashboardComponent, StandardUserComponent],
   exports: [StandardUserRoutingModule]

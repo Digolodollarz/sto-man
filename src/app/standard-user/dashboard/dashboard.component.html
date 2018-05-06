@@ -4,7 +4,115 @@
   </mat-card-title>
   <mat-card-content>
     Pending Requests: {{dash.pending}}
-    Borrowed Items: {{dash.borrowed}}
+    Borrowed Items: {{dash.approved}}
     Denied Requests: {{dash.denied}}
+
+    <style>
+      .dash-item {
+        position: relative;
+        margin-top: 2.5em !important;
+      }
+
+      .dash-item mat-card {
+        /*padding: 0;*/
+        /*display: flex;*/
+        /*align-items: end;*/
+        text-align: right;
+      }
+
+      .dash-item mat-card .body {
+        height: 5em;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position: relative;
+      }
+
+      .dash-item mat-card .body .title {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: darkorange;
+      }
+
+      .dash-item mat-card .body .count {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+
+      .dash-item .icon {
+        position: absolute;
+        top: -1em;
+        padding: 1.5em;
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+
+      .dash-item.amber .icon{
+        background-color: #ffbe00;
+      }
+
+      .dash-item.red .icon{
+        background-color: red;
+      }
+
+      .dash-item.green .icon{
+        background-color: green;
+      }
+
+    </style>
+
+    <div class="row">
+
+      <div class="dash-item amber col">
+        <mat-card>
+          <div class="icon mat-elevation-z8">
+            <mat-icon class="dash-icon">hourglass_empty</mat-icon>
+          </div>
+          <div class="body">
+            <span class="title">Pending</span>
+            <span class="count">{{dash.pending}}</span>
+          </div>
+          <div class="footer">
+            <a mat-button routerLink="/store/requests/pending">View requests</a>
+          </div>
+        </mat-card>
+      </div >
+      <div class="dash-item green col">
+        <mat-card>
+
+          <div class="icon mat-elevation-z8">
+            <mat-icon class="dash-icon">check</mat-icon>
+          </div>
+          <div class="body">
+            <span class="title">Approved</span>
+            <span class="count">{{dash.approved}}</span>
+          </div>
+          <div class="footer">
+            <a mat-button routerLink="/store/requests/pending">View requests</a>
+          </div>
+        </mat-card>
+      </div>
+      <div class="dash-item red col">
+        <mat-card>
+          <div class="icon mat-elevation-z8">
+            <mat-icon class="dash-icon">cross</mat-icon>
+          </div>
+          <div class="body">
+            <span class="title">denied</span>
+            <span class="count">{{dash.denied}}</span>
+          </div>
+          <div class="footer">
+            <a mat-button routerLink="/store/requests/pending">View requests</a>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
   </mat-card-content>
 </mat-card>
