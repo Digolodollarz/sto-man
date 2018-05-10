@@ -1,0 +1,56 @@
+.dash-item {
+  position: relative;
+  margin-top: 2.5em !important;
+}
+
+.dash-item mat-card {
+  /*padding: 0;*/
+  /*display: flex;*/
+  /*align-items: end;*/
+  text-align: right;
+}
+
+.dash-item mat-card .body {
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+
+.dash-item mat-card .body .title {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: darkorange;
+}
+
+.dash-item mat-card .body .count {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.dash-item .icon {
+  position: absolute;
+  top: -1em;
+  padding: 1.5em;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.dash-item.amber .icon{
+  background-color: #ffbe00;
+}
+
+.dash-item.red .icon{
+  background-color: red;
+}
+
+.dash-item.green .icon{
+  background-color: green;
+}

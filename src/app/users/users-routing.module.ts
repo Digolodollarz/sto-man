@@ -9,13 +9,18 @@ const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    canActivate: [AdminGuard],
-    children: [
-      {
-        path: 'create',
-        component: CreateUserComponent
-      }
-    ]
+    canActivate: [AdminGuard]
+    // , children: [
+    //   {
+    //     path: 'create',
+    //     component: CreateUserComponent
+    //   }
+    // ]
+  }
+  , {
+    path: 'users/create',
+    component: CreateUserComponent,
+    canActivate: [AdminGuard]
   }
 ];
 

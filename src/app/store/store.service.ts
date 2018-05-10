@@ -130,6 +130,11 @@ export class StoreService {
   //   return this.http.get<ComponentRequest[]>(url);
   // }
 
+  getAllRequests(): Observable<any[]> {
+    const url = `${this.apiUrl}/request/all`;
+    return this.http.get<any[]>(url);
+  }
+
   getAllUserRequests(): Observable<any[]> {
     const url = `${this.apiUrl}/request/mine`;
     return this.http.get<any[]>(url);

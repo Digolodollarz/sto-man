@@ -1,17 +1,16 @@
-
-<div class="row">
+<div class="grid row">
   <div class="col" *ngFor="let item of items">
     <mat-card>
       <div class="header">
         <img [src]="item.imageUrl" [alt]="item.description">
         <div class="title">
-          <h3>{{item.name}}</h3>
+          <p>{{item.name}}</p>
         </div>
       </div>
 
       <div class="details">
-        {{item.description}}
-        <span class="available">{{item.availableStock}}</span>
+        <p>{{item.description}}
+          <span class="available">{{item.availableStock}}</span></p>
       </div>
       <div class="footer">
         <button mat-raised-button color="primary" (click)="openItem(item)">Get Item</button>

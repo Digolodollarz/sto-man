@@ -1,3 +1,45 @@
-<p>
-  dashboard works!
-</p>
+<div class="row">
+  <div class="dash-item amber col">
+    <mat-card>
+      <div class="icon mat-elevation-z8">
+        <mat-icon class="dash-icon">hourglass_empty</mat-icon>
+      </div>
+      <div class="body">
+        <span class="title">Pending</span>
+        <span class="count">{{dash.pending}}</span>
+      </div>
+      <div class="footer">
+        <a mat-button routerLink="/store/requests/pending">View requests</a>
+      </div>
+    </mat-card>
+  </div >
+  <div class="dash-item green col">
+    <mat-card>
+
+      <div class="icon mat-elevation-z8">
+        <mat-icon class="dash-icon">check</mat-icon>
+      </div>
+      <div class="body">
+        <span class="title">Approved</span>
+        <span class="count">{{dash.approved}}</span>
+      </div>
+      <div class="footer">
+        <a mat-button routerLink="/store/requests/pending">View requests</a>
+      </div>
+    </mat-card>
+  </div>
+  <div class="dash-item red col">
+    <mat-card>
+      <div class="icon mat-elevation-z8">
+        <mat-icon class="dash-icon">cross</mat-icon>
+      </div>
+      <div class="body">
+        <span class="title">denied</span>
+        <span class="count">{{dash.denied}}</span>
+      </div>
+      <div class="footer">
+        <a mat-button routerLink="/store/requests/pending">View requests</a>
+      </div>
+    </mat-card>
+  </div>
+</div>
