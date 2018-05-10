@@ -9,14 +9,15 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatDialogModule,
+  MatDialogModule, MatIconModule,
   MatInputModule,
   MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {FormsModule, NgModel} from '@angular/forms';
-import { StoreService } from './store.service';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
+import {StoreService} from './store.service';
+import {ItemDetailComponent} from './item-detail/item-detail.component';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   imports: [
@@ -25,9 +26,10 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     StoreRoutingModule,
     MatToolbarModule, MatCardModule, MatButtonModule,
     MatInputModule, MatCheckboxModule, MatSelectModule,
+    MatIconModule,
     MatDialogModule
   ],
-  declarations: [StoreComponent, ItemsComponent, ManageComponent, CreateComponent, ItemDetailComponent],
+  declarations: [StoreComponent, ItemsComponent, ManageComponent, CreateComponent, ItemDetailComponent, RequestsComponent],
   providers: [StoreService],
   entryComponents: [ItemDetailComponent]
 })

@@ -159,5 +159,57 @@ body {
 
 /* end some box things */
 
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+mat-card.card-add {
+  padding: 8px 24px 24px;
+  .header {
+    .header-icon {
+      background-color: #6f0b80;
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      margin-top: -2em;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      color: white;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.20), 0 3px 3px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+      mat-icon {
+        margin: auto;
+      }
+    }
+    .title-text {
+      font-size: x-large;
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+  }
+}
+
+.content {
+  .card-add {
+    max-width: 768px;
+    margin: 3em auto 1em;
+  }
+}
+
 
 

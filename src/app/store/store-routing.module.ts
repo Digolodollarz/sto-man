@@ -7,35 +7,41 @@ import {CreateComponent} from './create/create.component';
 import {ManageComponent} from './manage/manage.component';
 import {SmTitleService} from '../sm-title.service';
 import {SupervisorGuard} from '../_guards/supervisor.guard';
+import {RequestsComponent} from './requests/requests.component';
 
 const routes: Routes = [
-  {
-    path: 'store',
-    component: StoreComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        component: ItemsComponent
-      },
-      {
-        path: 'create',
-        component: CreateComponent,
-        canActivate: [SupervisorGuard]
-      },
-      {
-        path: 'add',
-        component: CreateComponent,
-        canActivate: [SupervisorGuard]
-      },
-      {
-        path: 'manage',
-        component: ManageComponent,
-        canActivate: [SupervisorGuard]
-      }
-    ]
-  }
-];
+    // {
+    //   path: 'store',
+    //   component: StoreComponent,
+    //   canActivate: [AuthGuard]
+    // },
+    {
+      path: 'store',
+      component: ItemsComponent,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'store/create',
+      component: CreateComponent,
+      canActivate: [SupervisorGuard]
+    },
+    {
+      path: 'store/add',
+      component: CreateComponent,
+      canActivate: [SupervisorGuard]
+    },
+    {
+      path: 'store/manage',
+      component: ManageComponent,
+      canActivate: [SupervisorGuard]
+    },
+    {
+      path: 'store/requests',
+      component: RequestsComponent,
+      canActivate: [SupervisorGuard]
+    }
+  ]
+;
 
 @NgModule({
   imports: [

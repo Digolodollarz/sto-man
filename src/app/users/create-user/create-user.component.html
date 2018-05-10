@@ -1,33 +1,40 @@
-<mat-card>
-  <mat-toolbar>
-    <span>Create User</span>
-  </mat-toolbar>
+<div class="content">
+  <mat-card class="card-add">
+    <div class="header">
+      <div class="header-icon secondary">
+        <mat-icon>add</mat-icon>
+      </div>
+      <span class="title-text">
+    Create - Add new user</span>
+    </div>
 
-  <mat-form-field class="full-width">
-    <input type="text" required matInput placeholder="First Name" [(ngModel)]="user.firstname">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <input type="text" required matInput placeholder="Last Name" [(ngModel)]="user.lastname">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <input type="text" required matInput placeholder="User Name" [(ngModel)]="user.username">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <input type="text" required matInput placeholder="Default Password" [(ngModel)]="user.password">
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <input type="email" required matInput placeholder="Email Address" [(ngModel)]="user.email">
-  </mat-form-field>
+    <mat-form-field class="half-width left">
+      <input type="text" required matInput placeholder="First Name" [(ngModel)]="user.firstname">
+    </mat-form-field>
+    <mat-form-field class="half-width right">
+      <input type="text" required matInput placeholder="Last Name" [(ngModel)]="user.lastname">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input type="text" required matInput placeholder="User Name" [(ngModel)]="user.username">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input type="text" required matInput placeholder="Default Password" [(ngModel)]="user.password">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input type="email" required matInput placeholder="Email Address" [(ngModel)]="user.email">
+    </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <mat-select required placeholder="Authorities" multiple [(ngModel)]="user.authorities">
-      <mat-option *ngFor="let authority of authorities" [value]="authority.value">
-        {{authority.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-select required placeholder="Authorities" multiple [(ngModel)]="user.authorities">
+        <mat-option *ngFor="let authority of authorities" [value]="authority.value">
+          {{authority.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <div class="footer">
-    <button mat-raised-button color="primary" (click)="createUser()">Create</button>
-  </div>
-</mat-card>
+    <div class="footer">
+      <button mat-raised-button color="primary" (click)="createUser()">Create</button>
+    </div>
+  </mat-card>
+
+</div>

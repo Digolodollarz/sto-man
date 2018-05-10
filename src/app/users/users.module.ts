@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
-  MatExpansionModule,
+  MatExpansionModule, MatIconModule,
   MatInputModule,
   MatSelectModule,
   MatToolbarModule
@@ -19,7 +19,7 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     FormsModule,
     MatCardModule, MatInputModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSelectModule,
-    MatExpansionModule,
+    MatExpansionModule, MatIconModule,
     UsersRoutingModule
   ],
   declarations: [CreateUserComponent, UsersComponent]
