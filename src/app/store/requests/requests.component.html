@@ -1,0 +1,42 @@
+<style>
+  .capitalise {
+    text-transform: capitalize;
+  }
+</style>
+
+<div class="content">
+  <div class="users">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let request of requests">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="capitalise">
+            {{request.item.name}}
+          </mat-panel-title>
+          <mat-panel-description class="capitalise">
+            {{request.user.firstname}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <style>
+          .detail {
+            border: 1px solid red;
+          }
+        </style>
+        <div class="detail">
+          <span>{{request.item.name}}</span>
+          <p><span>{{request.item.availableStock}} remaining</span></p>
+        </div>
+
+        <div class="footer">
+          <button mat-button color="primary" (click)="approveRequest(request)">Approve</button>
+          <button mat-button color="primary" (click)="denyRequest(request, 'Hapana')">Deny</button>
+        </div>
+        <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Last name" [(ngModel)]="user.firstname">-->
+        <!--</mat-form-field>-->
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

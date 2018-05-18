@@ -8,6 +8,7 @@ import {Storage} from '../_models/storage';
 import {Item} from '../_models/item';
 import {UserService} from '../_services/user.service';
 import {AuthService} from '../auth.service';
+import {ItemRequest} from '../_models/item-request';
 
 @Injectable()
 export class StoreService {
@@ -109,16 +110,16 @@ export class StoreService {
   //   return this.http.get<ComponentRequest[]>(`${this.apiUrl}/request/pending`);
   // }
   //
-  // deny(request: ComponentRequest, reason: string): Observable<ComponentRequest> {
-  //   let params = new HttpParams();
-  //   params = params.set('approve', 'false');
-  //   params = params.append('reason', reason);
-  //   return this.http.post<ComponentRequest>(`${this.apiUrl}/request/${request.id}`, request, {params: params});
-  // }
-  //
-  // approve(request: ComponentRequest): Observable<ComponentRequest> {
-  //   return this.http.post<ComponentRequest>(`${this.apiUrl}/request/${request.id}`, request, {params: {approve: 'true'}});
-  // }
+  deny(request: ItemRequest, reason: string): Observable<ItemRequest> {
+    let params = new HttpParams();
+    params = params.set('approve', 'false');
+    params = params.append('reason', reason);
+    return this.http.post<ItemRequest>(`${this.apiUrl}/request/${request.id}`, request, {params: params});
+  }
+
+  approve(request: ItemRequest): Observable<ItemRequest> {
+    return this.http.post<ItemRequest>(`${this.apiUrl}/request/${request.id}`, request, {params: {approve: 'true'}});
+  }
   //
   // requestItem(request: ComponentRequest): Observable<ComponentRequest> {
   //   const url = `${this.apiUrl}/request`;
