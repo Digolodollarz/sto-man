@@ -20,3 +20,15 @@
     border-top: 1px solid rgba(128, 128, 128, 0.51);
   }
 }
+
+.dash-grid {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex-basis: 256px;
+    flex-grow: 1;
+  }
+}

@@ -1,7 +1,5 @@
-
-
 <router-outlet>
-  <div class="users">
+  <div class="">
     <mat-accordion>
       <mat-expansion-panel *ngFor="let user of users">
         <mat-expansion-panel-header>
@@ -37,6 +35,8 @@
 
       </mat-expansion-panel>
     </mat-accordion>
-    <a mat-mini-fab routerLink="create">Link</a>
+    <a mat-fab routerLink="create" class="fab fab-fixed">
+      <mat-icon>plus</mat-icon>
+    </a>
   </div>
 </router-outlet>

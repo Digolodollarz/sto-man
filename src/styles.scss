@@ -10,7 +10,11 @@ body {
   height: 100vh;
 }
 
-body html {
+html body {
+  .mat-drawer-container {
+    background-color: #bbb;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Serif', serif;
   }
@@ -136,7 +140,7 @@ body {
 }
 
 .main-box > .row.header {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   /* The above is shorthand for:
   flex-grow: 0,
   flex-shrink: 1,
@@ -149,7 +153,7 @@ body {
 }
 
 .main-box > .row.footer {
-  flex: 0 1 64px;
+  flex: 0 0 64px;
   background-color: hotpink;
 }
 
@@ -205,10 +209,17 @@ mat-card.card-add {
 }
 
 .content {
+  margin: 16px;
   .card-add {
     max-width: 768px;
     margin: 3em auto 1em;
   }
+}
+
+.fab.fab-fixed {
+  position: fixed;
+  right: 16px;
+  bottom: 64px;
 }
 
 

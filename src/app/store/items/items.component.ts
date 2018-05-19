@@ -35,4 +35,15 @@ export class ItemsComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  manageItem(item: Item): void {
+    const dialogRef = this.dialog.open(Item, {
+      // width: '250px',
+      data: {item: item}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }
